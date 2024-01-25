@@ -10,7 +10,7 @@ function App() {
     <>
      <BrowserRouter>
         <Header />
-        <MovieSliderSlider images={movieImage} />
+        <MovieSlider  />
         <Routes>
           {/* <Route path="/" element={<ContainCard />} />
           <Route path="/detailCard/:id" element={<DetailCard />} /> */}

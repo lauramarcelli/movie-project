@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 
 export default function useMovies() {
+  
   const [data, setData] = useState([]);
 
   const getMovies = async () => {

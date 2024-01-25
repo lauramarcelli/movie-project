@@ -1,14 +1,18 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import useMovies from '../hooks/useMovies';
-
+import { Button, Flex } from  '@chakra-ui/react'
 export default function MovieSlider() {
-  	// Variables y Estados
-	const [image, setImage] = useState([0]);
-	const quantity = images?.length;
 
-	// Return prematuro para evitar errores
-	if (!Array.isArray(images) || quantity === 0) return;
+	const { data, getMovies} = useMovies();
+
+	useEffect(() => {
+		getMovies();
+	  }, [])
+  
+	const [image, setImage] = useState([0]);
+	const quantity = movieImage?.length;
+
 
 	const nextImage = () => {
 		setActualImage(image === quantity - 1 ? 0 : image + 1);
@@ -19,11 +23,11 @@ export default function MovieSlider() {
 	};
 
 	return (
-		<div className={estilos.container}>
-			<button onClick={previousImage}>←</button>
-			{images.map((imagen, index) => {
+		<Flex className={estilos.container}>
+			<Button onClick={previousImage}>←</Button>
+			{movieImage.map((imagen, index) => {
 				return (
-					<div
+					<Box
 						className={
 							image === index
 								? `${estilos.slide} ${estilos.active}`
@@ -32,11 +36,11 @@ export default function MovieSlider() {
 						{image === index && (
 							<img key={index} src={imagen} alt="imagen" />
 						)}
-					</div>
+					</Box>
 				);
 			})}
-			<button onClick={nextImage}>→</button>
-		</div>
+			<Button onClick={nextImage}>→</Button>
+		</Flex>
 	);
 }
   
