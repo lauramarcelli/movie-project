@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import useMovies from '../hooks/useMovies';
 
 export default function MovieSlider() {
   	// Variables y Estados
