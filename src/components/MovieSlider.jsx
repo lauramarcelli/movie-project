@@ -30,7 +30,7 @@ export default function MovieSlider() {
           return (
             <Carousel.Item key={movie.id}>
               <img
-                src="https://image.tmdb.org/t/p/original/${backdrop_path}"
+                src={"{https://image.tmdb.org/t/p/original/${backdrop_path}"}
                 alt="imagen1"
                 className="d-block w-100"
               />
