@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import useMovies from "../hooks/useMovies";
-import { Button, Flex, Box } from "@chakra-ui/react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-bootstrap";
+
 
 export default function MovieSlider() {
   const { data, getPopular } = useMovies();
@@ -29,15 +28,15 @@ export default function MovieSlider() {
       <Carousel>
         {data.map((movie) => {
           return (
-            <div key={movie.id}>
+            <Carousel.Item key={movie.id}>
               <img
-                url={(`https://image.tmdb.org/t/p/original/${backdrop_path}`)}
+                src="https://image.tmdb.org/t/p/original/${backdrop_path}"
                 alt="imagen1"
                 className="d-block w-100"
               />
-              <h3>{movie.title}</h3>
+              <h3 >{movie.title}</h3>
               <p>{movie.overview}</p>
-            </div>
+            </Carousel.Item>
           );
         })}
       </Carousel>

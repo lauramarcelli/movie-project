@@ -1,22 +1,26 @@
 import React from "react";
-import { Center, Text, Image, Flex, Button, Spacer } from "@chakra-ui/react";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Image from 'react-bootstrap/Image';
+
 
 export default function Header() {
   return (
-    <Flex as="header" position="fixed" w="100%" bg="#3c3644">
-      <Image
-        borderRadius="full"
-        boxSize="80px"
-        src="/src/assets/movieproject.png"
-      ></Image>
-      <Spacer />
-      <Flex>
-      <Button p="4" m="6" fontSize="md"  bg="#3c3644" color="white">Home</Button>
-      <Button p="4" m="6"  fontSize="md" bg="#3c3644" color="white">Ultimos Lanzamientos</Button>
-      <Button p="4" m="6"  fontSize="md" bg="#3c3644" color="white">Populares</Button>
-      <Button p="4" m="6" fontSize="md" bg="#3c3644" color="white">Buscar</Button>
-      </Flex>
-      
-    </Flex>
+    <Navbar bg="dark" data-bs-theme="dark">
+      <Container>
+        <Navbar.Brand href="#home">Movie Project</Navbar.Brand>
+        <Nav className="me-auto">
+   
+          <Image src="/src/assets/movieproject.png" roundedCircle />
+        
+          
+          <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="#ultimoslanzamientos">Últimos Lanzamientos</Nav.Link>
+          <Nav.Link href="#populares">Populares</Nav.Link>
+          <Nav.Link href="#populares">Buscar</Nav.Link>
+        </Nav>
+      </Container>
+    </Navbar>
   );
 }

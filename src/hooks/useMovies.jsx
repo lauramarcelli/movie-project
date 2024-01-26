@@ -19,17 +19,17 @@ export default function useMovies() {
     }
   };
 
-  const getMovie = async (id) => {
-    try {
-      const apikey = import.meta.env.VITE_APP_MOVIE_KEY;
-      const info = await axios.get(`https://api.themoviedb.org/3/movie/${id}`);
+  // const getTopRated = async () => {
+  //   try {
+  //     const apikey = import.meta.env.VITE_APP_MOVIE_KEY;
+  //     const response = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apikey}`);
 
-      console.log(info.data);
-      setData(info.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  //     console.log(response.info.results);
+  //     setData(response.info.results);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  return { data, getPopular, getMovie };
+  return { data, getPopular };
 }
