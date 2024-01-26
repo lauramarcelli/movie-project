@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MovieSlider from "./components/MovieSlider";
 
 
+
 function App() {
 
 

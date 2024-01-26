@@ -5,11 +5,11 @@ export default function useMovies() {
   
   const [data, setData] = useState([]);
 
-  const getMovies = async () => {
+  const getPopular = async () => {
     try {
       const apikey = import.meta.env.VITE_APP_MOVIE_KEY;
       const response = await axios.get(
-        `https://api.themoviedb.org/3/movie/11?api_key=${apikey}`
+        `https://api.themoviedb.org/3/movie/popular?api_key=${apikey}`
       );
 
       console.log(response.data.results);
@@ -31,5 +31,5 @@ export default function useMovies() {
     }
   };
 
-  return { data, getMovies, getMovie };
+  return { data, getPopular, getMovie };
 }
