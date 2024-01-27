@@ -2,7 +2,35 @@
     min-height: 450px;
     background-position: top;
     background-size: cover;
-    ;
+    
+ 
   }
-
-
+  .carousel-data {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    padding-bottom: 40px;
+    opacity: .9;
+         & div{
+          background-color: #554f4fcf;
+          margin: 0 auto;
+          text-align: center;
+          width: 50%;
+          padding: 20px;
+         } 
+         
+        /* @media screen and ( max-width: 800px )
+          & div{
+            width: 90% !important;
+          h3
+            font-size: 2vw !important;
+          p
+            font-size: 1.5vw !important; }
+        @media screen and ( max-width: 500px )
+          h3
+            font-size: 3vw !important;
+          p
+            font-size: 2.5vw !important; */
+  
+        
+  }  
