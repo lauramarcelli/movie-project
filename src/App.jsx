@@ -4,6 +4,7 @@ import MovieSlider from "./components/MovieSlider";
 
 
 
+
 function App() {
 
 
