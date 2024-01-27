@@ -12,7 +12,7 @@ export default function Header() {
         <Image
           href="#home"
           src="/src/assets/movieproject.png"
-          height="80"
+          height="90"
           alt=""
           loading="lazy"
           roundedCircle
@@ -20,9 +20,9 @@ export default function Header() {
       </Nav>
       <Nav className="mr-auto" >
         <Nav.Link style={{ color:"burlywood", margin:10}} href="#home">Home</Nav.Link>
-        <Nav.Link style={{ color:"burlywood", margin:10}} href="#ultimoslanzamientos">Últimos Lanzamientos</Nav.Link>
-        <Nav.Link style={{ color:"burlywood", margin:10}} href="#populares">Populares</Nav.Link>
-        <Nav.Link style={{ color:"burlywood", margin:10}} href="#populares">Buscar</Nav.Link>
+        <Nav.Link style={{ color:"burlywood", margin:10}} href="#ultimoslanzamientos">Latest Movies</Nav.Link>
+        <Nav.Link style={{ color:"burlywood", margin:10}} href="#populares">Populars</Nav.Link>
+        <Nav.Link style={{ color:"burlywood", margin:10}} href="#populares">Search</Nav.Link>
       </Nav>
     </Navbar>
   );

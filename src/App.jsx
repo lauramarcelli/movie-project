@@ -1,6 +1,6 @@
 import Header from "./components/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import MovieSlider from "./components/MovieSlider";
+import MovieSlider from "./components/MovieSlider/MovieSlider";
 
 
 
