@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import MovieSlider from "./components/MovieSlider/MovieSlider";
-
+import Home from "./components/Home";
+import Footer from "./components/Footer"
 
 
 
@@ -12,7 +12,8 @@ function App() {
     <>
      <BrowserRouter>
         <Header />
-        <MovieSlider  />
+        <Home />
+        <Footer />
         <Routes>
           {/* <Route path="/" element={<ContainCard />} />
           <Route path="/detailCard/:id" element={<DetailCard />} /> */}

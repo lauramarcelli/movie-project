@@ -9,7 +9,7 @@ export default function useMovies() {
     try {
       const apikey = import.meta.env.VITE_APP_MOVIE_KEY;
       const response = await axios.get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=${apikey}`
+        `https://api.themoviedb.org/3/movie/popular?api_key=${apikey}&language=es-ES&page=1`
       );
 
       console.log(response.data.results);
