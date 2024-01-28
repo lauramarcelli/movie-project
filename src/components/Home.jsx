@@ -9,13 +9,13 @@ export default function Home() {
         <MovieSlider />
         <Row>
           <Col className='mt-3'>
-          <div className="ms-3 mt-3 mb-3">
+          <div className="mt-3 mb-3">
             <div className="fw-bold">Peliculas Populares</div>
           </div>
           <MovieList />
           </Col>
           <Col className='mt-3' >
-          <div className="ms-3 mt-3 mb-3">
+          <div className="mt-3 mb-3">
             <div className="fw-bold">Peliculas Mejor Puntuadas</div>
           </div>
           <MovieList />
