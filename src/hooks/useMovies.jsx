@@ -3,8 +3,8 @@ import { useState } from "react";
 
 export default function useMovies() {
   
-  const [data, setData] = useState([]);
-  const [mejorPuntuadas, setMejorPuntuadas] = useState([]);
+  const [popular, setPopular] = useState([]);
+  const [topRated, setTopRated] = useState([]);
   const apikey = import.meta.env.VITE_APP_MOVIE_KEY;
 
   const getPopular = async () => {
@@ -14,7 +14,7 @@ export default function useMovies() {
         `https://api.themoviedb.org/3/movie/popular?api_key=${apikey}&language=es-ES&page=1`
       );
 
-      setData(response.data.results);
+      setPopular(response.data.results);
     } catch (error) {
       console.log("Error fetching");
     }
@@ -25,12 +25,12 @@ export default function useMovies() {
       
       const response = await axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apikey}&language=es-ES&page=1`);
 
-      console.log(response.mejorPuntuadas.results);
-      setMejorPuntuadas(response.mejorPuntuadas.results);
+      console.log(response.data.results);
+      setTopRated(response.data.results);
     } catch (error) {
       console.log(error);
     }
   };
 
-  return { data, getPopular, mejorPuntuadas, getTopRated };
+  return { popular, getPopular, topRated, getTopRated };
 }

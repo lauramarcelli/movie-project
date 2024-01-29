@@ -1,26 +1,29 @@
-import React from 'react'
-import MovieList from './MovieLists/MovieList'
-import MovieSlider from './MovieSlider/MovieSlider'
-import { Col, Row } from 'react-bootstrap'
+import React from "react";
+import MovieList from "./MovieLists/MovieList";
+import MovieSlider from "./MovieSlider/MovieSlider";
+import { Col, Row } from "react-bootstrap";
+import useMovies from "../hooks/useMovies";
+import { useEffect } from "react";
 
 export default function Home() {
+  const { popular, getPopular, topRated, getTopRated } = useMovies();
+
+  useEffect(() => {
+    getPopular();
+    getTopRated();
+  }, []);
+
   return (
     <>
-        <MovieSlider />
-        <Row>
-          <Col className='mt-3'>
-          <div className="mt-3 mb-3">
-            <div className="fw-bold">Peliculas Populares</div>
-          </div>
-          <MovieList />
-          </Col>
-          <Col className='mt-3' >
-          <div className="mt-3 mb-3">
-            <div className="fw-bold">Peliculas Mejor Puntuadas</div>
-          </div>
-          <MovieList />
-          </Col>
-        </Row>
+      <MovieSlider />
+      <Row>
+        <Col className="mt-3">
+          <MovieList data={popular} />
+        </Col>
+        {/* <Col className="mt-3">
+          <MovieList data={topRated} />
+        </Col> */}
+      </Row>
     </>
-  )
+  );
 }

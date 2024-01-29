@@ -4,7 +4,7 @@ import { Button, Carousel, CarouselCaption } from "react-bootstrap";
 import "./MovieSlider.css";
 
 export default function MovieSlider() {
-  const { data, getPopular } = useMovies();
+  const { popular, getPopular } = useMovies();
 
   useEffect(() => {
     getPopular();
@@ -13,7 +13,7 @@ export default function MovieSlider() {
   return (
     <>
       <Carousel fade>
-        {data.map((movie) => {
+        {popular.map((movie) => {
           return (
             <Carousel.Item
               className="carousel-item"

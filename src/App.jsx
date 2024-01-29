@@ -1,26 +1,21 @@
 import Header from "./components/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
-import Footer from "./components/Footer/Footer"
-
-
+import Footer from "./components/Footer/Footer";
 
 function App() {
-
-
   return (
     <>
-     <BrowserRouter>
+      <BrowserRouter>
         <Header />
         <Home />
         <Footer />
         <Routes>
-          {/* <Route path="/" element={<ContainCard />} />
-          <Route path="/detailCard/:id" element={<DetailCard />} /> */}
+          <Route path="/" element={<Home />}></Route>
         </Routes>
       </BrowserRouter>
-      </>
-  )
+    </>
+  );
 }
 
-export default App
+export default App;
