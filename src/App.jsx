@@ -1,20 +1,24 @@
 import Header from "./components/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
+import NewMovies from "./pages/NewMovies";
+import Home from "./pages/Home";
 import Footer from "./components/Footer/Footer";
+import { Container } from "react-bootstrap";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Header />
+        <Container>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/new-movies" element={<NewMovies />}></Route>
-          {/* <Route path="/popular" element={<Popular />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/movie/:id" element={<Movie />} /> */}
-        </Routes>
+          <Route path="/">
+          <Route index element={<Home/>}/>
+          <Route path="/project-movies" element={<Home />} />
+          <Route path="/new-movies" element={<NewMovies />} />
+          </Route>
+          </Routes>
+        </Container>  
         <Footer />
       </BrowserRouter>
     </>

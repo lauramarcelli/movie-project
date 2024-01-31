@@ -1,6 +1,6 @@
 import React from "react";
-import MovieList from "./MovieLists/MovieList";
-import MovieSlider from "./MovieSlider/MovieSlider";
+import MovieList from "../components/MovieLists/MovieList";
+import MovieSlider from "../components/MovieSlider/MovieSlider";
 import { Col, Row } from "react-bootstrap";
 
 
