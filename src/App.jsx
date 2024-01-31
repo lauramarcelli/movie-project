@@ -8,11 +8,14 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
-        <Home />
-        <Footer />
         <Routes>
           <Route path="/" element={<Home />}></Route>
+          <Route path="/new-movies" element={<NewMovies />}></Route>
+          {/* <Route path="/popular" element={<Popular />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/movie/:id" element={<Movie />} /> */}
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

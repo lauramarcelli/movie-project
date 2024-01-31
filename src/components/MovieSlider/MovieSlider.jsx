@@ -3,17 +3,17 @@ import useMovies from "../../hooks/useMovies";
 import { Button, Carousel, CarouselCaption } from "react-bootstrap";
 import "./MovieSlider.css";
 
-export default function MovieSlider() {
-  const { popular, getPopular } = useMovies();
+export default function MovieSlider({category}) {
+  const { data, getMovies } = useMovies();
 
   useEffect(() => {
-    getPopular();
+    getMovies(category);
   }, []);
 
   return (
     <>
       <Carousel fade>
-        {popular.map((movie) => {
+        {data.map((movie) => {
           return (
             <Carousel.Item
               className="carousel-item"
