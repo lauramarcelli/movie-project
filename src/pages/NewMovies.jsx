@@ -4,9 +4,9 @@ import MovieCatalogue from '../components/MovieCatalogue/MovieCatalogue'
 export default function NewMovies() {
   return (
     <div>
-        <Title>
+        <h2>
             Ultimos Lanzamientos
-        </Title>
+        </h2>
         <MovieCatalogue category="now_playing" />
     </div>
   )

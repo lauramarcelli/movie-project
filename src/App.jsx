@@ -12,12 +12,10 @@ function App() {
         <Header />
         <Container>
         <Routes>
-          <Route path="/">
-          <Route index element={<Home/>}/>
-          <Route path="/project-movies" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/new-movies" element={<NewMovies />} />
-          </Route>
-          </Routes>
+        </Routes>
+
         </Container>  
         <Footer />
       </BrowserRouter>
