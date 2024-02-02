@@ -1,0 +1,11 @@
+.custom-title {
+    font-size: 15px; 
+    text-align: center; 
+    white-space: pre; 
+    overflow: hidden;  
+    text-overflow: ellipsis;
+  }
+.custom-card{
+    padding: 2px;
+    margin-bottom: 15px;
+}

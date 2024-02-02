@@ -2,6 +2,8 @@ import Button from "react-bootstrap/Button";
 import useMovies from "../../hooks/useMovies";
 import { useEffect } from "react";
 import { Col, Container, Card, Row } from "react-bootstrap";
+import { TfiEye } from "react-icons/tfi";
+import "./MovieCatalogue.css"
 
 export default function MovieCatalogue({ category }) {
   const { data, getMovies } = useMovies();
@@ -17,14 +19,14 @@ export default function MovieCatalogue({ category }) {
         {data.map((movie) => {
           return (
          <Col>
-              <Card key={movie.id} style={{ width: "18rem" }}>
+              <Card key={movie.id} className="custom-card" style={{ width: "18rem" }}>
                 <Card.Img
                   variant="top"
                   src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
                 />
                 <Card.Body>
-                  <Card.Title>{movie.title}</Card.Title>
-                  <Button variant="primary">Ver más</Button>
+                  <Card.Title className="custom-title">{movie.title}</Card.Title>
+                  <Button variant="secondary"><TfiEye /></Button>
                 </Card.Body>
               </Card>
               </Col>

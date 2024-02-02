@@ -1,5 +1,4 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Image from "react-bootstrap/Image";
@@ -22,8 +21,8 @@ export default function Header() {
       <Nav className="mr-auto" >
         <Nav.Link style={{ color:"burlywood", margin:10}} href="/">Home</Nav.Link>
         <Nav.Link style={{ color:"burlywood", margin:10}} href="/new-movies">Últimos Lanzamientos</Nav.Link>
-        <Nav.Link style={{ color:"burlywood", margin:10}} href="#populares">Populares</Nav.Link>
-        <Nav.Link style={{ color:"burlywood", margin:10}} href="#populares">Buscar</Nav.Link>
+        <Nav.Link style={{ color:"burlywood", margin:10}} href="/popular">Populares</Nav.Link>
+        <Nav.Link style={{ color:"burlywood", margin:10}} href="/search">Buscar</Nav.Link>
       </Nav>
     </Navbar>
   );

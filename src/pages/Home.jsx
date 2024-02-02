@@ -1,7 +1,7 @@
 import React from "react";
 import MovieList from "../components/MovieLists/MovieList";
 import MovieSlider from "../components/MovieSlider/MovieSlider";
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 
 
 export default function Home() {
@@ -10,6 +10,7 @@ export default function Home() {
   return (
     <>
       <MovieSlider category="now_playing"/>
+      <Container>
       <Row>
         <Col className="mt-3">
           <MovieList category="popular" />
@@ -18,6 +19,8 @@ export default function Home() {
           <MovieList category="top_rated" />
         </Col>
       </Row>
+      </Container>
+    
     </>
   );
 }
