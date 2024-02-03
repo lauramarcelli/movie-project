@@ -5,10 +5,10 @@ export default function useMovies() {
   const [data, setData] = useState([]);
   const apikey = import.meta.env.VITE_APP_MOVIE_KEY;
 
-  const getMovies = async (category) => {
+  const getMovies = async (category, page) => {
     try {
       const response = await axios.get(
-        `https://api.themoviedb.org/3/movie/${category}?api_key=${apikey}&language=es-ES&page=1`
+        `https://api.themoviedb.org/3/movie/${category}?api_key=${apikey}&language=es-ES&page=${page}`
       );
 
       setData(response.data.results);

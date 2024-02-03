@@ -38,9 +38,9 @@ export default function Search() {
         <Row>
           {data.map((movie) => {
             return (
-              <Col>
+              <Col   key={movie.id}>
                 <Card
-                  key={movie.id}
+                
                   className="custom-card"
                   style={{ width: "18rem" }}
                 >
