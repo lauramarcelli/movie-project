@@ -9,3 +9,10 @@
     padding: 2px;
     margin-bottom: 15px;
 }
+
+.custom-btn{
+  padding: 8px;
+  margin-left: 4px;
+  margin-top: 6px;
+  background-color: #5e585e;
+}
