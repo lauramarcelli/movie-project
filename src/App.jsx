@@ -6,7 +6,7 @@ import Footer from "./components/Footer/Footer";
 import Popular from "./pages/Popular";
 import Search from "./pages/Search";
 import Favorites from "./pages/Favorites";
-import DetailMovie from "./components/MovieCatalogue/DetailMovie";
+import DetailMovie from "../components/MovieCatalogue/DetailMovie";
 
 function App() {
   return (

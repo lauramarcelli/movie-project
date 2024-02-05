@@ -10,13 +10,15 @@ export default function DetailMovie() {
 
   
 
+
   useEffect(() => {
+    console.log(params)
     getMovie(params.idMovie);
-  }, [data]);
+  }, [params]);
 
   return (
     <>
-      {data.title(
+    
         <Container
           className="background-container"
           style={{
@@ -49,7 +51,7 @@ export default function DetailMovie() {
             </Container>
           </Container>
         </Container>
-      )}
+    
       ;
     </>
   );
