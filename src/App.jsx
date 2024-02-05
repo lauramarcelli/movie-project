@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import Footer from "./components/Footer/Footer";
 import Popular from "./pages/Popular";
 import Search from "./pages/Search";
+import Favorites from "./pages/Favorites";
+import DetailMovie from "./components/MovieCatalogue/DetailMovie";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/new-movies" element={<NewMovies />} />
           <Route path="/popular" element={<Popular />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/detailMovie/:idMovie" element={<DetailMovie />} />
         </Routes>
 
         </>  

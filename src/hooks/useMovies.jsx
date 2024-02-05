@@ -22,7 +22,7 @@ export default function useMovies() {
   const getMovie = async (id) => {
     try {
       
-      const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}/?api_key=${apikey}&language=es-ES&page=1`);
+      const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${apikey}&language=es-ES&page=1`);
 
       console.log(response.data);
       setData(response.data);
