@@ -22,14 +22,11 @@ export default function MovieSlider({ category }) {
               }}
               key={movie.id}
             >
-              <CarouselCaption>
-                <div
-                  className="opacity-75"
-                  style={{ backgroundColor: "#554f4fcf" }}
-                >
+              <CarouselCaption className="carousel-data">
+                <div>
                   <h3>{movie.title}</h3>
                   <p>{movie.overview}</p>
-                  <Button className=" btn btn-secondary">Ver más</Button>
+                  <Button className=" mb-2 btn btn-secondary">Ver más</Button>
                 </div>
               </CarouselCaption>
             </Carousel.Item>
