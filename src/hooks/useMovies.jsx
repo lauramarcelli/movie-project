@@ -18,12 +18,13 @@ export default function useMovies() {
   };
 
   const getMovie = async (id) => {
-    console.log('hola')
+    
     try {
-      
-      const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${apikey}&language=es-ES`);
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${apikey}&language=es-ES`
+      );
 
-      console.log(response);
+      
       setData(response.data);
     } catch (error) {
       console.log(error);
@@ -42,6 +43,19 @@ export default function useMovies() {
     }
   };
 
-  return { data, getMovies, getMovie, searchMovie };
-}
+  const getMovieTrailer = async (id) => {
+    
+    try {
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apikey}language=en-US`
+      );
 
+      
+      setData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return { data, getMovies, getMovie, searchMovie, getMovieTrailer };
+}

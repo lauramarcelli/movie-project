@@ -3,7 +3,7 @@ import useMovies from "../../hooks/useMovies";
 import { useEffect, useState } from "react";
 import { Col, Container, Card, Row } from "react-bootstrap";
 import { TfiEye } from "react-icons/tfi";
-import { FaRegHeart } from "react-icons/fa"
+import { FaRegHeart } from "react-icons/fa";
 import "./MovieCatalogue.css";
 import { useNavigate } from "react-router-dom";
 import Pagination from "react-bootstrap/Pagination";
@@ -34,11 +34,15 @@ export default function MovieCatalogue({ category }) {
                     <Card.Title className="custom-title">
                       {movie.title}
                     </Card.Title>
-                    <Button onClick={() => navigate(`/detailMovie/${movie.id}`)}className="custom-btn"variant="secondary">
+                    <Button
+                      onClick={() => navigate(`/detailMovie/${movie.id}`)}
+                      className="custom-btn"
+                      variant="secondary"
+                    >
                       <TfiEye />
                     </Button>
-                    <Button  className="custom-btn"variant="secondary">
-                    <FaRegHeart />
+                    <Button className="custom-btn" variant="secondary">
+                      <FaRegHeart />
                     </Button>
                   </Card.Body>
                 </Card>
@@ -54,26 +58,15 @@ export default function MovieCatalogue({ category }) {
           </Pagination.Item>
           <Pagination.Ellipsis />
 
-          <Pagination.Item onClick={() => setPage(2)}>
-            {2}
-          </Pagination.Item>
-          <Pagination.Item onClick={() => setPage(3)}>
-            {3}
-          </Pagination.Item>
-          <Pagination.Item onClick={() => setPage(4)}>
-            {4}
-          </Pagination.Item>
-          <Pagination.Item onClick={() => setPage(5)}>
-            {5}
-          </Pagination.Item>
+          <Pagination.Item onClick={() => setPage(2)}>{2}</Pagination.Item>
+          <Pagination.Item onClick={() => setPage(3)}>{3}</Pagination.Item>
+          <Pagination.Item onClick={() => setPage(4)}>{4}</Pagination.Item>
+          <Pagination.Item onClick={() => setPage(5)}>{5}</Pagination.Item>
 
           <Pagination.Ellipsis />
-          <Pagination.Item onClick={() => setPage(160)}>
-            {160}
-          </Pagination.Item>
+          <Pagination.Item onClick={() => setPage(160)}>{160}</Pagination.Item>
           <Pagination.Next onClick={() => setPage(page + 1)} />
         </Pagination>
-        
       </Container>
     </>
   );

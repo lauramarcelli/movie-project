@@ -3,7 +3,7 @@ import useMovies from "../../hooks/useMovies";
 import { Button, Carousel, CarouselCaption } from "react-bootstrap";
 import "./MovieSlider.css";
 
-export default function MovieSlider({category}) {
+export default function MovieSlider({ category }) {
   const { data, getMovies } = useMovies();
 
   useEffect(() => {

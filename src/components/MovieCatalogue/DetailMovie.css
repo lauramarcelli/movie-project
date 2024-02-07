@@ -1,16 +1,72 @@
 .background-container{
-    display: flex;
-    justify-content: center;
     background-position:center;
-    background-position: center;
-    width: "100%";
+    background-size: cover;
+    height: 100vh;
+    background-color: #050404b3;
+     /* filter: brightness(0.2);  */
+     overflow: hidden;
+    
 }
 
-.movie-detail{
+.movie-image{
     display:flex;
-    justify-content: center;
-    width: "100%";
-    padding: 15px;
-    color: "white";
+    width: 270px;
+    margin: 100px;
+    background-color: "white";
     text-wrap: wrap;
+}
+.custom-list-group .list-group-item {
+    background-color: transparent !important;
+    width: 80px;
+    font-size: small;
+    text-align: left;
+    color: white;
+}
+.list-group{
+    color: white;
+    text-align: left;
+    font-size: smaller;
+}
+.li-list{
+    list-style-type: disc; 
+    color: burlywood;
+}
+.button-detail{  
+    background-color:  #403640;
+    color: burlywood;
+    border: #403640;
+}
+.button-detail:hover {
+    background-color: burlywood; 
+    color: #403640;
+  }
+.title-sinopsis{
+    color: white;
+    margin-top: 60px;
+    text-align: left;
+    font-weight: 700;
+}  
+.data-movie{
+    color:white;
+    margin-bottom: 15px;
+    font-size: small;
+    text-align: left;
+    width: 900px;
+}
+.title-movie{
+    color:white;
+    text-align: left;
+    
+    font-size: extra;
+}
+.title-year{
+    color: grey;
+    text-align: left;
+    font-size: medium;
+}
+.data-gender{
+    color: white;
+    text-align: left;
+    margin-top: 30px;
+    font-weight: 700;
 }
