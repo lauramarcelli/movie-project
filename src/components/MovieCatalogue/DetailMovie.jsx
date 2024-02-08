@@ -23,6 +23,7 @@ export default function DetailMovie() {
   return (
     <>
       {data?.title ? (
+        
         <div
           className="background-container"
           style={{
