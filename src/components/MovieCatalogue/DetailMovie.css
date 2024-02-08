@@ -2,12 +2,18 @@
     background-position:center;
     background-size: cover;
     height: 100vh;
-    background-color: #050404b3;
+   
      /* filter: brightness(0.2);  */
      overflow: hidden;
     
 }
-
+.div-filter{
+    background-position:center;
+    background-size: cover;
+    height: 100vh;
+    background-color: #050404b3;
+    /* filter: brightness(0.2);  */
+}
 .movie-image{
     display:flex;
     width: 270px;

@@ -1,8 +1,8 @@
 import { Container, Form, InputGroup, Button, Row, Col, Card } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import useMovies from "../hooks/useMovies";
-import MovieCatalogue from "../components/MovieCatalogue/MovieCatalogue";
 import { TfiEye } from "react-icons/tfi";
+import Footer from "../components/Footer/Footer";
 
 export default function Search() {
   const [nameMovie, setNameMovie] = useState("");
@@ -13,8 +13,8 @@ export default function Search() {
   }, [nameMovie]);
 
   return (
-    <Container>
-      <InputGroup className="m-3  justify-content-md-center">
+    <>
+      <InputGroup className="m-5 w-75 justify-content-md-center">
         <Form.Control
           placeholder="buscar pelicula"
           aria-label="buscar pelicula"
@@ -63,9 +63,10 @@ export default function Search() {
         </Row>
       </Container>
       </>
-   
-    </Container>
+      <Footer />
+    </>
   );
+
 }
 
 

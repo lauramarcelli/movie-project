@@ -5,12 +5,12 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Avatar from "react-avatar";
 import { Link } from "react-router-dom";
 
-
 export default function MovieList({category}) {
   const { data, getMovies } = useMovies();
   useEffect(() => {
     getMovies(category);
   }, []);
+
 
   return (
     <>
@@ -27,7 +27,7 @@ export default function MovieList({category}) {
               <Col xs={6} md={4}>
                 <Avatar src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} size="50" round={true} />
               </Col>
-              <Link  to={``}>
+              <Link  to={`/detailMovie/${movie.id}`}>
               <Button bg="primary" pill>></Button>
               </Link>
               

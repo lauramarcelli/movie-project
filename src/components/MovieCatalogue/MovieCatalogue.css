@@ -16,3 +16,27 @@
   margin-top: 6px;
   background-color: #5e585e;
 }
+.my-custom-pagination {
+
+ align-items: center;
+  padding: 10px;
+}
+
+.my-custom-pagination .page-link {
+  color: #333;
+}
+
+.my-custom-pagination .page-link:hover {
+  background-color: burlywood;
+  color: #555;
+}
+
+.my-custom-pagination .active .page-link {
+  background-color: #878687;
+  border-color: #6e6d6e;
+}
+
+.my-custom-pagination .disabled .page-link {
+  color: #ccc;
+  pointer-events: none;
+}

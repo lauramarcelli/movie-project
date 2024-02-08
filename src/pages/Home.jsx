@@ -1,4 +1,3 @@
-import React from "react";
 import MovieList from "../components/MovieLists/MovieList";
 import MovieSlider from "../components/MovieSlider/MovieSlider";
 import { Col, Container, Row } from "react-bootstrap";
@@ -20,8 +19,8 @@ export default function Home() {
             <MovieList category="top_rated" />
           </Col>
         </Row>
-        <Footer/>
       </Container>
+      <Footer />
     </>
   );
 }

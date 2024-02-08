@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import useMovies from "../../hooks/useMovies";
 import { Button, Carousel, CarouselCaption } from "react-bootstrap";
 import "./MovieSlider.css";
+import { Link } from "react-router-dom";
 
 export default function MovieSlider({ category }) {
   const { data, getMovies } = useMovies();
@@ -26,7 +27,9 @@ export default function MovieSlider({ category }) {
                 <div>
                   <h3>{movie.title}</h3>
                   <p>{movie.overview}</p>
-                  <Button className=" mb-2 btn btn-secondary">Ver más</Button>
+                  <Link to={`/detailMovie/${movie.id}`}>
+                  <Button className=" mb-2 btn btn-secondary">Ver más</Button></Link>
+                 
                 </div>
               </CarouselCaption>
             </Carousel.Item>

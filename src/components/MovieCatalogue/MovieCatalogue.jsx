@@ -1,14 +1,17 @@
 import Button from "react-bootstrap/Button";
 import useMovies from "../../hooks/useMovies";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Col, Container, Card, Row } from "react-bootstrap";
 import { TfiEye } from "react-icons/tfi";
 import { FaRegHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 import "./MovieCatalogue.css";
 import { useNavigate } from "react-router-dom";
 import Pagination from "react-bootstrap/Pagination";
+import { FavoritesContext } from "../../Context/FavoritesContext";;
 
 export default function MovieCatalogue({ category }) {
+  const { addFavs, delFavs, isFavs } = useContext(FavoritesContext);
   const [page, setPage] = useState(1);
   const { data, getMovies } = useMovies();
 
@@ -41,32 +44,44 @@ export default function MovieCatalogue({ category }) {
                     >
                       <TfiEye />
                     </Button>
-                    <Button className="custom-btn" variant="secondary">
-                      <FaRegHeart />
-                    </Button>
+                    {isFavs(movie.id) ? (
+                      <Button className="custom-btn" variant="secondary" onClick={(e) => delFavs(e, movie.id)}>
+                        <FaHeart />
+                      </Button>
+                    ) : (
+                      <Button className="custom-btn" variant="secondary" onClick={(e) => addFavs(e, { movie })}>
+                        <FaRegHeart />
+                      </Button>
+                    )}
                   </Card.Body>
                 </Card>
               </Col>
             );
           })}
         </Row>
-        <Pagination>
-          <Pagination.First />
-          <Pagination.Prev onClick={() => setPage(page - 1)} />
-          <Pagination.Item onClick={() => setPage(1)} active>
-            {1}
-          </Pagination.Item>
-          <Pagination.Ellipsis />
+        <Row>
+          <Col xs={12} md={4} className="mx-auto">
+            <Pagination className="my-custom-pagination">
+              <Pagination.First />
+              <Pagination.Prev onClick={() => setPage(page - 1)} />
+              <Pagination.Item onClick={() => setPage(1)} active>
+                {1}
+              </Pagination.Item>
+              <Pagination.Ellipsis />
 
-          <Pagination.Item onClick={() => setPage(2)}>{2}</Pagination.Item>
-          <Pagination.Item onClick={() => setPage(3)}>{3}</Pagination.Item>
-          <Pagination.Item onClick={() => setPage(4)}>{4}</Pagination.Item>
-          <Pagination.Item onClick={() => setPage(5)}>{5}</Pagination.Item>
+              <Pagination.Item onClick={() => setPage(2)}>{2}</Pagination.Item>
+              <Pagination.Item onClick={() => setPage(3)}>{3}</Pagination.Item>
+              <Pagination.Item onClick={() => setPage(4)}>{4}</Pagination.Item>
+              <Pagination.Item onClick={() => setPage(5)}>{5}</Pagination.Item>
 
-          <Pagination.Ellipsis />
-          <Pagination.Item onClick={() => setPage(160)}>{160}</Pagination.Item>
-          <Pagination.Next onClick={() => setPage(page + 1)} />
-        </Pagination>
+              <Pagination.Ellipsis />
+              <Pagination.Item onClick={() => setPage(160)}>
+                {160}
+              </Pagination.Item>
+              <Pagination.Next onClick={() => setPage(page + 1)} />
+            </Pagination>
+          </Col>
+        </Row>
       </Container>
     </>
   );
