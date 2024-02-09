@@ -1,7 +1,6 @@
-import Button from "react-bootstrap/Button";
 import useMovies from "../../hooks/useMovies";
 import { useEffect, useState, useContext } from "react";
-import { Col, Container, Card, Row } from "react-bootstrap";
+import { Col, Container, Card, Row, Button } from "react-bootstrap";
 import { TfiEye } from "react-icons/tfi";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";

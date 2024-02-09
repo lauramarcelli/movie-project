@@ -22,6 +22,7 @@ const FavoritesContextProvider = ({ children }) => {
 
     const delFavs = (e, id) => {
         console.log("chau")
+        console.log(id)
         e.stopPropagation();
         setFavorites(favorites.filter((movie) => movie.id !== id));
         set(
@@ -31,9 +32,9 @@ const FavoritesContextProvider = ({ children }) => {
     };
 
     const isFavs = (id) => {
-        console.log('es favorito')
-        console.log(favorites.some((id) => movie.id === id))
-        return favorites.some((id) => movie.id === id);
+        console.log(id)
+        console.log(favorites.some((movie) => movie.id === id))
+        return favorites.some((movie) => movie.id === id);
     };
 
     const data = {
