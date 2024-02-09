@@ -6,6 +6,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import useMovies from "../hooks/useMovies";
+import Footer from "../components/Footer/Footer";
 
 const Favorites = () => {
   const { addFavs, delFavs, isFavs } = useContext(FavoritesContext);
@@ -14,16 +15,15 @@ const Favorites = () => {
   const { data, getMovies } = useMovies();
 
   return (
-    <Container>
+    <>
       <h5 className="m-3">Mis Peliculas Favoritas</h5>
       {favorites.length === 0 ? (
         <p>No hay peliculas guardadas</p>
       ) : (
-        <Container >
-          
-            <Row >
+        <Container>
+          <Row className="justify-content-center">
             {favorites.map((movie) => (
-              <Col key={movie.id}>
+              <Col md="auto" key={movie.id}>
                 <Card className="custom-card" style={{ width: "18rem" }}>
                   <Card.Img
                     variant="top"
@@ -52,7 +52,7 @@ const Favorites = () => {
                       <Button
                         className="custom-btn"
                         variant="secondary"
-                        onClick={(e) => addFavs(e,  movie )}
+                        onClick={(e) => addFavs(e, movie)}
                       >
                         <FaRegHeart />
                       </Button>
@@ -60,14 +60,13 @@ const Favorites = () => {
                   </Card.Body>
                 </Card>
               </Col>
-               ))}
-            </Row>
-         
+            ))}
+          </Row>
         </Container>
       )}
-    </Container>
+      <Footer />
+    </>
   );
 };
 
 export default Favorites;
-

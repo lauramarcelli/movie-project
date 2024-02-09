@@ -5,18 +5,18 @@ import { Container, Button, Col, Row, Spinner } from "react-bootstrap";
 import "./DetailMovie.css";
 import { FaRegPlayCircle } from "react-icons/fa";
 import TrailerModal from "./TrailerModal";
-import { useContext } from "react";
 
 export default function DetailMovie() {
   const [showModal, setShowModal] = useState(false);
-  const { data, getMovie, getMovieTrailer } = useMovies();
+  const { data, getMovie } = useMovies();
   const params = useParams();
-  const trailerUrl = "https://www.youtube.com/watch?v=o-YBDTqX_ZU";
+  const { id } = useParams();
+  const apikey = import.meta.env.VITE_APP_MOVIE_KEY;
+  const trailerUrl = `https://api.themoviedb.org/3/movie/${id}/videos${apikey}&language=en-EN`;
   const handleShowModal = () => setShowModal(true);
   const handleHideModal = () => setShowModal(false);
 
   useEffect(() => {
-    getMovieTrailer(params.idMovie);
     getMovie(params.idMovie);
   }, [params]);
 
@@ -81,7 +81,7 @@ export default function DetailMovie() {
         </div>
       ) : (
         <Container>
-          <Button className="button-spinner"variant="secondary" disabled>
+          <Button className="button-spinner" variant="secondary" disabled>
             <Spinner
               as="span"
               animation="grow"

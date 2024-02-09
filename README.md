@@ -14,6 +14,7 @@
 - Boostrap Rect
 - Axios
 - React Icons
+- React Player
 ***
 
 ## Home
