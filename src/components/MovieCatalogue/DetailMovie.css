@@ -1,33 +1,45 @@
-.background-container{
-    background-position:center;
+.background-container {
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
-    height: 100vh;
-   
-     /* filter: brightness(0.2);  */
-     overflow: hidden;
+    overflow: hidden;
     
+
 }
-.div-filter{
-    background-position:center;
-    background-size: cover;
-    height: 100vh;
+
+.container_dark {
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
     background-color: #050404b3;
-    /* filter: brightness(0.2);  */
 }
-.movie-image{
-    display:flex;
-    width: 270px;
+
+.Row {
+    height: 100%;
+    display: flex;
+    align-items: center
+}
+
+.movie-image {
+    display: flex;
+    height: calc(70vh);
+    padding: 1rem;
     margin: 100px;
-    background-color: "white";
-    text-wrap: wrap;
+   
 }
+
 .custom-list-group .list-group-item {
-    background-color: transparent !important;
-    width: 80px;
-    font-size: small;
+   font-size: 1.75vw;
     text-align: left;
     color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center
 }
+
 .list-group{
     color: white;
     text-align: left;
@@ -37,42 +49,53 @@
     list-style-type: disc; 
     color: burlywood;
 }
-.button-detail{  
-    background-color:  #403640;
+.button-detail {
+    background-color: #403640;
     color: burlywood;
     border: #403640;
+    font-size: 1.5em !important;
 }
+
 .button-detail:hover {
-    background-color: burlywood; 
+    background-color: burlywood;
     color: #403640;
-  }
-.title-sinopsis{
+}
+
+.title-sinopsis {
     color: white;
     margin-top: 60px;
     text-align: left;
     font-weight: 700;
-}  
-.data-movie{
-    color:white;
+}
+
+.data-movie {
+    color: white;
     margin-bottom: 15px;
     font-size: small;
     text-align: left;
     width: 900px;
 }
-.title-movie{
-    color:white;
+
+.title-movie {
+    color: white;
     text-align: left;
-    
+
     font-size: extra;
 }
-.title-year{
+
+.title-year {
     color: grey;
     text-align: left;
     font-size: medium;
 }
-.data-gender{
+
+.data-gender {
     color: white;
     text-align: left;
     margin-top: 30px;
     font-weight: 700;
+}
+
+.button-spinner{
+margin-top: 30px;
 }

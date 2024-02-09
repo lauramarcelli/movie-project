@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import useMovies from "../../hooks/useMovies";
-import { Button, Carousel, CarouselCaption } from "react-bootstrap";
+import { Button, Carousel, CarouselCaption, Spinner, Container } from "react-bootstrap";
 import "./MovieSlider.css";
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,21 @@ export default function MovieSlider({ category }) {
     getMovies(category);
   }, []);
 
-  return (
+  return <>
+  {data.length === 0 ? (
+    <Container>
+      <Button className="button-spinner" variant="secondary" disabled>
+        <Spinner
+          as="span"
+          animation="border"
+          size="sm"
+          role="status"
+          aria-hidden="true"
+        />
+        Cargando...
+      </Button>
+    </Container>
+  ) : (
     <>
       <Carousel fade>
         {data.map((movie) => {
@@ -24,12 +38,12 @@ export default function MovieSlider({ category }) {
               key={movie.id}
             >
               <CarouselCaption className="carousel-data">
-                <div>
-                  <h3>{movie.title}</h3>
+                <div className="carouseldiv-data">
+                  <h4>{movie.title}</h4>
                   <p>{movie.overview}</p>
                   <Link to={`/detailMovie/${movie.id}`}>
-                  <Button className=" mb-2 btn btn-secondary">Ver más</Button></Link>
-                 
+                    <Button className=" mb-2 btn btn-secondary">Ver más</Button>
+                  </Link>
                 </div>
               </CarouselCaption>
             </Carousel.Item>
@@ -37,5 +51,6 @@ export default function MovieSlider({ category }) {
         })}
       </Carousel>
     </>
-  );
+  )}
+  </>;
 }

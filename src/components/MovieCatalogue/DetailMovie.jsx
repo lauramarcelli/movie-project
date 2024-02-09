@@ -1,7 +1,7 @@
 import useMovies from "../../hooks/useMovies";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Container, Button, Col, Row } from "react-bootstrap";
+import { Container, Button, Col, Row, Spinner } from "react-bootstrap";
 import "./DetailMovie.css";
 import { FaRegPlayCircle } from "react-icons/fa";
 import TrailerModal from "./TrailerModal";
@@ -23,7 +23,6 @@ export default function DetailMovie() {
   return (
     <>
       {data?.title ? (
-        
         <div
           className="background-container"
           style={{
@@ -31,21 +30,22 @@ export default function DetailMovie() {
           }}
         >
           {
-            <Row>
-              <img
-                className="movie-image"
-                src={`https://image.tmdb.org/t/p/original/${data.poster_path}`}
-              />
+            <Row className="container_dark">
               <Col>
-                <Container className="d-flex justify-content-end mt-5">
-                  <Col xs={12} md={8}>
+                <img
+                  className="movie-image"
+                  src={`https://image.tmdb.org/t/p/original/${data.poster_path}`}
+                />
+              </Col>
+              <Col>
+                <Row className="d-flex justify-content-end  mt-4">
+                  <Col xs={12} sm={18} md={8}>
                     <h3 className="title-movie">{data.title}</h3>
                     <p className="title-year">
                       {data.release_date.slice(0, 4)}
                     </p>
                   </Col>
-
-                  <Col xs={6} md={4}>
+                  <Col>
                     <Button
                       onClick={handleShowModal}
                       className="button-detail "
@@ -58,8 +58,8 @@ export default function DetailMovie() {
                       trailerUrl={trailerUrl}
                     />
                   </Col>
-                </Container>
-                <Container>
+                </Row>
+                <Col>
                   <h5 className="title-sinopsis">Sinopsis</h5>
                   <p className="data-movie">{data.overview}</p>
                   <h6 className="data-gender">Generos</h6>
@@ -74,14 +74,23 @@ export default function DetailMovie() {
                       ))}
                     </ul>
                   </Col>
-                </Container>
+                </Col>
               </Col>
             </Row>
           }
         </div>
       ) : (
         <Container>
-          <h5>hacer spinner</h5>
+          <Button className="button-spinner"variant="secondary" disabled>
+            <Spinner
+              as="span"
+              animation="grow"
+              size="sm"
+              role="status"
+              aria-hidden="true"
+            />
+            Cargando...
+          </Button>
         </Container>
       )}
     </>

@@ -4,6 +4,7 @@ import { Button, Col } from "react-bootstrap";
 import ListGroup from "react-bootstrap/ListGroup";
 import Avatar from "react-avatar";
 import { Link } from "react-router-dom";
+import { BsArrowRightCircle } from "react-icons/bs";
 
 export default function MovieList({category}) {
   const { data, getMovies } = useMovies();
@@ -14,10 +15,10 @@ export default function MovieList({category}) {
 
   return (
     <>
-      <ListGroup as="ol">
+      <ListGroup  style={{ marginBottom: "5px", marginTop: "20px",  maxHeight: '350px', overflowY: 'scroll' }} as="ol">
         {data.map((movie) => {
           return (
-            <ListGroup.Item  className="mt-2 d-flex justify-content-between align-items-start"
+            <ListGroup.Item  className="listgroupitem-item d-flex justify-content-between "
               as="li"
               key={movie.id}
             >
@@ -28,7 +29,7 @@ export default function MovieList({category}) {
                 <Avatar src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} size="50" round={true} />
               </Col>
               <Link  to={`/detailMovie/${movie.id}`}>
-              <Button bg="primary" pill>></Button>
+              <Button  bg="primary"><BsArrowRightCircle /></Button>
               </Link>
               
             </ListGroup.Item>

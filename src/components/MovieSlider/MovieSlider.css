@@ -10,14 +10,18 @@
     align-items: flex-end;
     height: 100%;
     padding-bottom: 40px;
-    opacity: .9;
-         & div{
-          background-color: #554f4fcf;
-          margin: 0 auto;
-          text-align: center;
-          width: 50%;
-          padding: 20px;
-         } 
-     
-        
+    opacity: .9;        
   }  
+
+  .carouseldiv-data{
+    background-color: #7d7979cf;
+    margin: 0 auto;
+    text-align: center;
+    width: 50%;
+    padding: 20px;
+    font-size: small;
+  }
+  .button-spinner{
+    margin-top: 30px;
+    margin-bottom: 70px;
+    }

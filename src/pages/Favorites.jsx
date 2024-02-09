@@ -15,7 +15,7 @@ const Favorites = () => {
 
   return (
     <Container>
-      <h1>Mis Peliculas Favoritas</h1>
+      <h5 className="m-3">Mis Peliculas Favoritas</h5>
       {favorites.length === 0 ? (
         <p>No hay peliculas guardadas</p>
       ) : (
@@ -52,7 +52,7 @@ const Favorites = () => {
                       <Button
                         className="custom-btn"
                         variant="secondary"
-                        onClick={(e) => addFavs(e, { movie })}
+                        onClick={(e) => addFavs(e,  movie )}
                       >
                         <FaRegHeart />
                       </Button>
