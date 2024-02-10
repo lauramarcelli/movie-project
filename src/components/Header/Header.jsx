@@ -11,12 +11,13 @@ export default function Header() {
       <Nav className="ml-auto">
         <Image
           href="#home"
-          src="/src/assets/movieproject.png"
+          src="src/assets/—Pngtree—cartoon movie popcorn field clapper_6125859.png"
           height="90"
           alt=""
           loading="lazy"
           roundedCircle
         />
+        <h5 className="nav-title">Movie Project</h5>
       </Nav>
       <Nav className="mr-auto" >
         <Nav.Link style={{ color:"burlywood", margin:10}} href="/">Home</Nav.Link>

@@ -1,7 +1,7 @@
 import useMovies from "../../hooks/useMovies";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Container, Button, Col, Row, Spinner } from "react-bootstrap";
+import { Container, Button, Col, Row, Spinner, Modal } from "react-bootstrap";
 import "./DetailMovie.css";
 import { FaRegPlayCircle } from "react-icons/fa";
 import TrailerModal from "./TrailerModal";
@@ -9,11 +9,11 @@ import TrailerModal from "./TrailerModal";
 export default function DetailMovie() {
   const { data, getMovie, movieTrailer, fetchTrailer } = useMovies();
   const params = useParams();
-  const trailerUrl ="https://www.youtube.com/watch?v=cmbdJo6WQgQ"
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  // const trailerUrl = "https://www.youtube.com/watch?v=cmbdJo6WQgQ";
   // const trailerUrl = `https://www.youtube.com/watch?v=${movieTrailer.key}/>`;
-  const handleShowModal = () => setShowModal(true);
-  const handleHideModal = () => setShowModal(false);
-  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     fetchTrailer(params.idMovie);
@@ -21,7 +21,9 @@ export default function DetailMovie() {
   }, [params]);
 
   return (
+   
     <>
+    
       {data?.title ? (
         <div
           className="background-container"
@@ -46,17 +48,35 @@ export default function DetailMovie() {
                     </p>
                   </Col>
                   <Col>
-                    <Button
-                      onClick={handleShowModal}
-                      className="button-detail "
-                    >
+                    <Button onClick={handleShow} className="button-detail ">
                       <FaRegPlayCircle /> Ver Trailer
-                    </Button>{" "}
-                    <TrailerModal
-                      show={showModal}
-                      onHide={handleHideModal}
-                      trailerUrl={trailerUrl}
-                    />
+                    </Button>
+                    <Modal show={show} onHide={handleClose}>
+                      <Modal.Header closeButton>
+                        <Modal.Title>Trailer</Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body>
+                        
+                      {movieTrailer && movieTrailer.length > 0 ? (
+                                <iframe
+                                    width="100%"
+                                    height="600px"
+                                    src={`https://www.youtube.com/embed/${movieTrailer.key}`}
+                                    frameBorder="0"
+                                    allowFullScreen
+                                ></iframe>
+                            ) : (
+                                <h5>
+                                    No hay trailer disponible
+                                </h5>
+                            )}
+                      </Modal.Body>
+                      <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose}>
+                          Close
+                        </Button>
+                      </Modal.Footer>
+                    </Modal>
                   </Col>
                 </Row>
                 <Col>
