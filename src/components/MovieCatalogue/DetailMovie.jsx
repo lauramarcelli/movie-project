@@ -7,16 +7,16 @@ import { FaRegPlayCircle } from "react-icons/fa";
 import TrailerModal from "./TrailerModal";
 
 export default function DetailMovie() {
-  const [showModal, setShowModal] = useState(false);
-  const { data, getMovie } = useMovies();
+  const { data, getMovie, movieTrailer, fetchTrailer } = useMovies();
   const params = useParams();
-  const { id } = useParams();
-  const apikey = import.meta.env.VITE_APP_MOVIE_KEY;
-  const trailerUrl = `https://api.themoviedb.org/3/movie/${id}/videos${apikey}&language=en-EN`;
+  const trailerUrl ="https://www.youtube.com/watch?v=cmbdJo6WQgQ"
+  // const trailerUrl = `https://www.youtube.com/watch?v=${movieTrailer.key}/>`;
   const handleShowModal = () => setShowModal(true);
   const handleHideModal = () => setShowModal(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
+    fetchTrailer(params.idMovie);
     getMovie(params.idMovie);
   }, [params]);
 

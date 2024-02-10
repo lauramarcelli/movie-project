@@ -1,5 +1,5 @@
 import { Modal, Button } from "react-bootstrap";
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/lazy";
 
 const TrailerModal = ({ show, onHide, trailerUrl }) => {
   return (
