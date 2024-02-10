@@ -8,3 +8,9 @@
   margin: 2px;
 }  
 
+.nav-title{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: burlywood;
+  margin-top: 40px;
+  margin-left: 10px;
+}
