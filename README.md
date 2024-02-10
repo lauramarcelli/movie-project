@@ -32,7 +32,7 @@ la paginación.
 - Podrás seleccionar con un corazón tus peliculas favoritas para visualizarlas luego.
 
 *****
-### Dejo aquí el link del proyecto [Meet Cinema](https://movieproject-mu.vercel.app/favorites)
+### Dejo aquí el link del proyecto [Meet Cinema](https://movieproject-mu.vercel.app/)
 
 *****
 ### Para hacer correr este proyecto:
@@ -40,5 +40,5 @@ la paginación.
 - Ingresar comando ```npm run dev```.
 
 ***
-#### Gracias a [Guille Montaña](https://github.com/AngelGuillermoMontania) y a Sofi Ferrer 💜 por sus explicaciones de React. 
+#### Gracias a [Guille Montaña](https://github.com/AngelGuillermoMontania) y a Sofi Ferrer 💜 por sus explicaciones de React y su enorme paciencia!. 
 
