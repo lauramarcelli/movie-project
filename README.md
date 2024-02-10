@@ -30,11 +30,9 @@ la paginación.
 - Podrás buscar tú película favorita.
 ## Pestaña de peliculas favoritas
 - Podrás seleccionar con un corazón tus peliculas favoritas para visualizarlas luego.
-~~~
 
-~~~
 *****
-### Dejo aquí el link del proyecto [Meet Cinema](https://)
+### Dejo aquí el link del proyecto [Meet Cinema](https://movieproject-mu.vercel.app/favorites)
 
 *****
 ### Para hacer correr este proyecto:
