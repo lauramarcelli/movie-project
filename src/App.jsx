@@ -6,7 +6,8 @@ import Popular from "./pages/Popular";
 import Search from "./pages/Search";
 import Favorites from "./pages/Favorites";
 import DetailMovie from "./components/MovieCatalogue/DetailMovie";
-import FavoritesContextProvider from "./Context/FavoritesContext";;
+import FavoritesContextProvider from "./Context/FavoritesContext";
+import Error404 from "./pages/Error404";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Route path="/search" element={<Search />} />
               <Route path="/favorites" element={<Favorites />} />
               <Route path="/detailMovie/:idMovie" element={<DetailMovie />} />
+              <Route path="*" element={<Error404 />}/>
             </Routes>
           </>
         </BrowserRouter>

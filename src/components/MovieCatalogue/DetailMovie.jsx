@@ -57,7 +57,7 @@ export default function DetailMovie() {
                       </Modal.Header>
                       <Modal.Body>
                         
-                      {movieTrailer && movieTrailer.length > 0 ? (
+                      {movieTrailer ? (
                                 <iframe
                                     width="100%"
                                     height="600px"

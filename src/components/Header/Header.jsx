@@ -9,13 +9,13 @@ export default function Header() {
   return (
     <Navbar className="custom-navbar"  expand="lg">
       <Nav className="ml-auto">
-        <Image
+        <img
           href="#home"
           src="src/assets/—Pngtree—cartoon movie popcorn field clapper_6125859.png"
           height="90"
           alt=""
           loading="lazy"
-          roundedCircle
+          
         />
         <h5 className="nav-title">Movie Project</h5>
       </Nav>
