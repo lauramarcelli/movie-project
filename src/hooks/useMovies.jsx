@@ -47,9 +47,8 @@ export default function useMovies() {
       const response = await axios.get(
         `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apikey}&language=en-US`
       );
-      console.log(response.data.results)
+     
       setMovieTrailer(response.data.results.find((movie) => movie.type === "Trailer"))
-      console.log(response.data.results.find((movie) => movie.type === "Trailer"))
     } catch (error) {
       console.error("Error al obtener el trailer:", error);
     }
