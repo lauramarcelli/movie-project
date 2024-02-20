@@ -3,7 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Image from "react-bootstrap/Image";
 import  "./Header.css";
-
+import imageHeader from "../../assets/logo.png"
 
 export default function Header() {
   return (
@@ -11,7 +11,7 @@ export default function Header() {
       <Nav className="ml-auto">
         <img
           href="#home"
-          src="src/assets/—Pngtree—cartoon movie popcorn field clapper_6125859.png"
+          src={imageHeader}
           height="90"
           alt=""
           loading="lazy"

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Container, Button, Col, Row, Spinner, Modal } from "react-bootstrap";
 import "./DetailMovie.css";
 import { FaRegPlayCircle } from "react-icons/fa";
-import TrailerModal from "./TrailerModal";
+
 
 export default function DetailMovie() {
   const { data, getMovie, movieTrailer, fetchTrailer } = useMovies();
@@ -12,8 +12,7 @@ export default function DetailMovie() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  // const trailerUrl = "https://www.youtube.com/watch?v=cmbdJo6WQgQ";
-  // const trailerUrl = `https://www.youtube.com/watch?v=${movieTrailer.key}/>`;
+  
 
   useEffect(() => {
     fetchTrailer(params.idMovie);
