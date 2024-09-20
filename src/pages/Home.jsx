@@ -10,7 +10,7 @@ export default function Home() {
       <Container>
         <Row>
           <Col className="mt-3">
-            <h5>Peliculas más porpulares</h5>
+            <h5>Peliculas más populares</h5>
             <MovieList category="popular" />
           </Col>
 
